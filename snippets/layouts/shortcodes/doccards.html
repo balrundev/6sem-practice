@@ -1,0 +1,11 @@
+<div class="mb-4 border-3 border-start border-primary">
+    <div class="p-4 border border-left-0 rounded-end">
+        <div style="display: flex; justify-content: space-between; align-items: top; margin-bottom: 0.8125rem;">
+            <h5 style="margin-bottom: 0;">{{ .Get 0 }}</h5>
+            {{ if .Get 1 }}
+            <span class="text-info" style="font-size: 0.8em;">{{ .Get 1 }}</span>
+            {{ end }}
+        </div>
+        {{ .Inner }}
+    </div>
+</div>

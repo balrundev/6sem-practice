@@ -1,0 +1,22 @@
+{{ $filename := "cards.json" }}
+
+{{ $resource := (.Page.Resources.GetMatch $filename).RelPermalink }}
+{{ $data := getJSON $resource}}
+
+<div style="display: flex;">
+    {{ range $card := $data }}
+        <div class="card m-2">
+            {{ if index $card "link" }}
+            <a href="{{ index $card "link" }}">
+            {{ end }}
+                <img class="card-img-top" src="{{ index $card "img" }}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ index $card "title" }}</h4>
+                    <p class="card-text">{{ (index $card "content") | markdownify }}</p>
+                </div>
+            {{ if index $card "link" }}
+            </a>
+            {{ end }}
+        </div>
+    {{ end }}
+</div>

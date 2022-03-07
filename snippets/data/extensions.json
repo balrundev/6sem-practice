@@ -1,0 +1,11 @@
+{
+    ".pdf": "fa-file-pdf",
+    ".jpg": "fa-file-image",
+    ".png": "fa-file-image",
+    ".doc": "fa-file-word",
+    ".docx": "fa-file-word",
+    ".xls": "fa-file-excel",
+    ".xlsx": "fa-file-excel",
+    ".ppt": "fa-file-powerpoint",
+    ".pptx": "fa-file-powerpoint"
+}

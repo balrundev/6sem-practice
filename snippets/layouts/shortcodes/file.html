@@ -1,0 +1,17 @@
+{{ $name := .Get 0 }}
+{{ $title := .Get 1 }}
+{{ $file_ext := path.Ext $name }}
+<div class="my-3">
+    <a href="{{ $name }}">
+        <div style="display: flex; align-items: center;">
+            {{ $file_icon := "fa-file" }}
+            {{ range $ext, $icon := .Site.Data.extensions }}
+                {{ if eq $file_ext $ext }}
+                    {{ $file_icon = $icon }}
+                {{ end }}
+            {{ end }}
+            <i class="fa-regular {{ $file_icon }}" style="font-size: 1.4em; margin-right: 10px;"></i>
+            {{ $title }}
+        </div>
+    </a>
+</div>

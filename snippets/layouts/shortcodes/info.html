@@ -1,0 +1,4 @@
+{{ $type := or (.Get 0) "primary" }}
+<div class="alert alert-soft-{{ $type }}">
+    {{ .Inner | markdownify }}
+</div>

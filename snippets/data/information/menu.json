@@ -1,0 +1,28 @@
+[
+    {
+        "link": "information/basic-information"
+    },
+    {
+        "link": "information/info"
+    },
+    {
+        "link": "information/files"
+    },
+    {
+        "link": "information/cards"
+    },
+    {
+        "link": "information/sample"
+    },
+    {
+        "link": "information/innovations"
+    },
+    {
+        "link": "https://yandex.ru",
+        "title": "Yandex"
+    },
+    {
+        "link": "https://gohugo.io",
+        "title": "Hugo"
+    }
+]

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Content Sections - Snippets | Unify - Multipurpose Responsive Template</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{{ "vendor/bootstrap-icons/font/bootstrap-icons.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "vendor/swiper/swiper-bundle.min.css" | relURL }}">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="{{ "css/theme.min.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/snippets.min.css" | relURL }}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+
+    <!-- Description -->
+    <div class="container content-space-1">
+      <div class="row">
+        <div class="col-md-4 col-lg-3 mb-3 mb-md-0">
+          <!-- Navbar -->
+          <div class="navbar-expand-md">
+            <!-- Navbar Toggle -->
+            <div class="d-grid">
+              <button type="button" class="navbar-toggler btn btn-white mb-3" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenuEg6" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenuEg6">
+                <span class="d-flex justify-content-between align-items-center">
+                  <span class="text-dark mb-0">Menu</span>
+
+                  <span class="navbar-toggler-default">
+                    <i class="bi-list"></i>
+                  </span>
+
+                  <span class="navbar-toggler-toggled">
+                    <i class="bi-x"></i>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <!-- End Navbar Toggle -->
+
+            <!-- Navbar Collapse -->
+            <div id="navbarVerticalNavMenuEg6" class="collapse navbar-collapse">
+              <ul id="navbarSettings" class="js-sticky-block js-scrollspy nav nav-tabs nav-vertical">
+                {{ range $item := .Site.Data.information.menu}}
+                  {{ $url := index $item "link" }}
+                  {{ $title := ($.Site.GetPage $url).Title }}
+                  {{ if not (eq (index $item "title") nil) }}
+                    {{ $title = index $item "title" }}
+                  {{ end }}
+                  <li class="nav-item">
+                    <a class="nav-link {{ if eq $title $.Title }} active {{ end }}" href="{{ $url | relURL }}">{{ $title }}</a>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+            <!-- End Navbar Collapse -->
+          </div>
+          <!-- End Navbar -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col-md-8 col-lg-9">
+          <div class="mb-5">
+            <h2>{{ .Title }}</h2>
+          </div>
+
+          {{ .Content }}
+
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Description -->
+
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="{{ "vendor/bootstrap/dist/js/bootstrap.bundle.min.js" | relURL }}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{{ "vendor/swiper/swiper-bundle.min.js" | relURL }}"></script>
+
+  <!-- JS Unify -->
+  <script src="{{ "js/theme.min.js" | relURL }}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF SWIPER
+      // =======================================================
+      var navigation = new Swiper('.js-swiper-navigation', {
+        loop: true,
+        navigation: {
+          nextEl: '.js-swiper-navigation-button-next',
+          prevEl: '.js-swiper-navigation-button-prev',
+        },
+      });
+    })()
+  </script>
+
+</body>
+</html>

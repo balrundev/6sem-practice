@@ -1,0 +1,17 @@
+<div class="my-3">
+    <!-- Swiper -->
+    <div class="js-swiper-navigation swiper">
+        <div class="swiper-wrapper">
+            {{ range $image := .Page.Resources }}
+                <div class="swiper-slide">
+                    <img class="img-fluid" src="{{ .RelPermalink }}" alt="{{ .Title }}">
+                </div>
+            {{ end }}
+        </div>
+    
+        <!-- Arrows -->
+        <div class="js-swiper-navigation-button-next swiper-button-next"></div>
+        <div class="js-swiper-navigation-button-prev swiper-button-prev"></div>
+    </div>
+    <!-- End Swiper -->
+</div>
