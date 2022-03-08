@@ -1,0 +1,18 @@
+[
+    {
+        "img": "dolomites.jpg",
+        "title": "Sample Card",
+        "content": "Card Content"
+    },
+    {
+        "img": "caucasus.jpg",
+        "link": "https://gohugo.io",
+        "title": "Card with link",
+        "content": "Hugo Website"
+    },
+    {
+        "img": "field.jpg",
+        "title": "Sample Card",
+        "content": "Card Content"
+    }
+]
